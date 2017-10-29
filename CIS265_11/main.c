@@ -30,7 +30,7 @@
 * clear_digits_array will store blank characters into all elements of the 
 * digits array. process_digit will store the seven-segment representation of 
 * digit into a specified position in the digits array(positions range from 0 
-* to MAX_DIGITS – 1). print_digits_array will display the rows of the digits 
+* to MAX_DIGITS â€“ 1). print_digits_array will display the rows of the digits 
 * array, each on a single line, producing output such as that shown in the 
 * example.
 *
@@ -89,7 +89,7 @@ void process_digit(int digit, int position) {
 
 // Completely clear digit array.
 void clear_digits_array(void) {
-	memset(digits, 0, sizeof(digits[0][0]) * sizeof(char) * (MAX_DIGITS + 1) * 3);
+	memset(digits, 0, sizeof(digits[0][0]) * sizeof(char) * ((MAX_DIGITS * 4) + 1) * 3);
 }
 
 // Iterate digit array printing it.
