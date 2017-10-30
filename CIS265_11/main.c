@@ -56,7 +56,7 @@ char digits[3][(MAX_DIGITS * 4) + 1];
 // Store 7-segment characterization of a digit (0-9).
 void process_digit(int digit, int position) {
 	/*
-       Defines which 7-segment(s) of digit are displayed (0==off, 1==on). 
+	   Defines which 7-segment(s) of digit are displayed (0==off, 1==on). 
 	   Encoded as (MSB to LSB): (1) top-left segment, (2) top horizontal, (3) top-right, (4) space, 
 	   (5) left-middle vertical, (6) middle horizontal, (7) right-middle vertical, (8) space, 
 	   (9) left-bottom vertical, (10) bottom horizontal, (11) right-bottom vertical, (12) space.
@@ -81,8 +81,8 @@ void process_digit(int digit, int position) {
 
 	// Store segment characters into digits array.
 	for (int i = 0; i < 4; i++, bit >>= 1) {
-		digits[0][position * 4 + i] = (segments[digit] & bit) ? segmentCharacters[i] : ' ';    // Top row.
-		digits[1][position * 4 + i] = (segments[digit] & bit>>4) ? segmentCharacters[i] : ' '; // Middle row.
+		digits[0][position * 4 + i] = (segments[digit] & bit) ? segmentCharacters[i] : ' ';      // Top row.
+		digits[1][position * 4 + i] = (segments[digit] & bit >> 4) ? segmentCharacters[i] : ' '; // Middle row.
 		digits[2][position * 4 + i] = (segments[digit] & bit >> 8) ? segmentCharacters[i] : ' '; // Bottom row.
 	}
 }
