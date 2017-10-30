@@ -51,7 +51,7 @@
 #define MAX_DIGITS 10 // Maximum digits for entry/display.
 
 // Holds characters for 7-segment display of entered digits.
-char digits[3][(MAX_DIGITS * 4) + 1];
+char digits[3][(MAX_DIGITS * 4) + 1] = { 0 };
 
 // Store 7-segment characterization of a digit (0-9).
 void process_digit(int digit, int position) {
